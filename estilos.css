@@ -1,0 +1,529 @@
+/* =========================================
+   1. VARIABLES DE COLOR (Paleta Requerida)
+   ========================================= */
+:root {
+    /* Fondos */
+    --color-bg-main: #0a0a0a;       /* Negro muy oscuro (fondo principal) */
+    --color-bg-darker: #050505;     /* Negro casi absoluto (footer, navbar en móvil) */
+    
+    /* Acentos */
+    --color-accent-red: #da251d;     /* Rojo vibrante (botones, iconos, overlays) */
+    --color-accent-red-hover: #b51e18; /* Rojo más oscuro para efectos hover */
+    
+    /* Texto */
+    --color-text-main: #e0e0e0;     /* Gris muy claro (texto principal) */
+    --color-text-light: #ffffff;     /* Blanco (títulos, navbar) */
+    --color-text-muted: #888888;     /* Gris medio (texto secundario) */
+    
+    /* Bordes y Líneas */
+    --color-border: #333333;        /* Gris oscuro para líneas divisorias */
+}
+
+/* =========================================
+   2. ESTILOS GENERALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Suaviza el desplazamiento al usar enlaces de anclaje (#id) */
+    scroll-behavior: smooth;
+    font-size: 16px; /* Tamaño de fuente base */
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: 1px;
+}
+
+/* Contenedor principal con espaciado lateral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Títulos de sección estándar */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   3. ESTILOS SECCIÓN HERO (CABECERA)
+   ========================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Imagen de fondo en mosaico */
+    background-image: url('images/hero-mosaic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto paralaje opcional */
+}
+
+/* Capa oscura superpuesta para asegurar legibilidad del título */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Negro con transparencia */
+    z-index: 1;
+}
+
+/* Barra de Navegación */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10; /* Asegura que esté por encima del overlay */
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px; /* Espaciado entre enlaces */
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7); /* Blanco tenue por defecto */
+    letter-spacing: 2px;
+}
+
+.nav-links a:hover {
+    color: var(--color-text-light); /* Blanco brillante al pasar el ratón */
+}
+
+/* Título Central del Hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--color-text-light); /* Recuadro blanco */
+    padding: 20px 60px;
+}
+
+.hero-title .first-name {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.hero-title .last-name {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 8px; /* Espaciado amplio entre letras */
+    color: var(--color-text-main);
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Línea divisoria fina */
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+/* =========================================
+   4. ESTILOS SECCIÓN SOBRE MÍ
+   ========================================= */
+.about-section {
+    padding: 100px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Imagen más estrecha que el texto */
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image-container {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    /* Efecto Blanco y Negro (requiere que la imagen sea en color) */
+    filter: grayscale(100%); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* =========================================
+   5. ESTILOS SECCIÓN PORTAFOLIO
+   ========================================= */
+.portfolio-section {
+    padding: 50px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    /* 4 columnas automáticas, se adaptan en móvil */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 15px; /* Espaciado muy pequeño entre fotos */
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden; /* Evita que la imagen sobresalga en zoom */
+    aspect-ratio: 1 / 1; /* Mantiene el elemento cuadrado */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    filter: grayscale(100%); /* B&N por defecto */
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Subtítulo (Caption) con fondo de color */
+.portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%); /* Oculto por defecto debajo */
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.portfolio-caption h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Clases de variante para el color del pie */
+.portfolio-caption.red {
+    background-color: var(--color-accent-red);
+}
+
+.portfolio-caption.dark {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro translúcido */
+}
+
+/* Variación Minimalista: B&N siempre, caption oscuro */
+.portfolio-item.minimalist img {
+    filter: grayscale(100%);
+}
+
+/* --- Efectos Hover --- */
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Zoom suave al pasar ratón */
+    filter: grayscale(0%);   /* La imagen cobra color */
+}
+
+.portfolio-item:hover .portfolio-caption {
+    transform: translateY(0%); /* Muestra el pie al pasar ratón */
+}
+
+/* =========================================
+   6. ESTILOS SECCIÓN CONTACTO
+   ========================================= */
+.contact-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--color-border); /* Línea divisoria */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Formulario más ancho que iconos */
+    gap: 50px;
+    align-items: center;
+}
+
+/* Estilos del Formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a1a1a; /* Gris muy oscuro para inputs */
+    border: 1px solid #333;
+    color: var(--color-text-main);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-red); /* Borde rojo al enfocar */
+}
+
+textarea {
+    resize: vertical; /* Permite cambiar tamaño verticalmente */
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-accent-red);
+    color: var(--color-text-light);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-accent-red-hover); /* Rojo más oscuro al hover */
+}
+
+/* Iconos Sociales */
+.social-icons {
+    display: flex;
+    justify-content: space-around; /* Distribución uniforme */
+    flex-wrap: wrap; /* Permite salto de línea en móvil */
+    gap: 20px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent-red); /* Círculo rojo */
+    color: var(--color-text-light);
+    border-radius: 50%; /* Forma circular */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1) rotate(5deg); /* Efecto pop y rotación */
+    background-color: var(--color-accent-red-hover);
+}
+
+/* =========================================
+   7. ESTILOS PIE DE PÁGINA (FOOTER)
+   ========================================= */
+.footer {
+    background-color: var(--color-bg-darker);
+    color: var(--color-text-muted);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* =========================================
+   8. MEDIA QUERIES (Responsividad)
+   ========================================= */
+
+/* Tablets y pantallas medianas (menos de 992px) */
+@media (max-width: 992px) {
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr; /* Pasa a una sola columna */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-image-container {
+        order: -1; /* Mueve la imagen arriba del texto en móvil */
+    }
+
+    .hero-title .first-name {
+        font-size: 3rem;
+    }
+}
+
+/* Móviles (menos de 600px) */
+@media (max-width: 600px) {
+    html {
+        font-size: 14px; /* Pequeña reducción de fuente base */
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 15px; /* Menor espacio entre enlaces */
+    }
+
+    .hero-title {
+        padding: 15px 30px;
+    }
+
+    .hero-title .first-name {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Una foto por fila en móvil */
+    }
+}
+
+
+/* =========================================
+   cambio de idioma
+   ========================================= */
+.language-selector {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.language-selector button {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: all 0.3s;
+}
+
+.language-selector button:hover {
+    border-color: var(--color-accent-red);
+    color: var(--color-accent-red);
+    background-color: #b51e18;
+}
+
+/* =========================================
+   /* Configuración del contenedor del carrusel */
+  /* ========================================= */
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Por detrás del texto y el overlay */
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Oculta por defecto */
+    transition: opacity 1.5s ease-in-out; /* Transición de desvanecimiento */
+}
+
+/* Clase activa para mostrar la imagen actual */
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Asegura que el Hero tenga posición relativa */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-image: none !important; /* Eliminamos el fondo estático anterior */
+}
+
+/* Estilo general de los botones flotantes */
+/* ========================================= */
+/* Contenedor principal */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los dos botones */
+    z-index: 1000;
+}
+
+/* Estilo general de los botones flotantes */
+.float-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px; /* Forma cuadrada redondeada como en tu imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, opacity 0.3s;
+    text-decoration: none;
+}
+
+
+/* ========================================= */
+/* Botón WhatsApp */
+.whatsapp {
+    background-color: #b51e18;
+}
+
+/* Botón Volver Arriba (Azul) */
+.back-to-top {
+    background-color: #b51e18;
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden;
+}
+
+/* Clase para mostrar el botón cuando se hace scroll */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
