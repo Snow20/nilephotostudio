@@ -189,3 +189,189 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// --- 4. Control del Menú Desplegable Horizontal Superior ---
+document.addEventListener('DOMContentLoaded', function() {
+    const portfolioTrigger = document.getElementById('nav-portfolio-trigger');
+    const horizontalMenu = document.getElementById('horizontal-dropdown-menu');
+
+    if (portfolioTrigger && horizontalMenu) {
+        
+        // Abre/Cierra el menú al hacer clic en el enlace PORTAFOLIO
+        portfolioTrigger.addEventListener('click', function(event) {
+            event.preventDefault();  /* Evita el desplazamiento inmediato del anclaje */
+            event.stopPropagation(); /* Evita que el clic se propague al documento */
+            
+            horizontalMenu.classList.toggle('open');
+        });
+
+        // Evita que clics dentro del menú lo cierren prematuramente
+        horizontalMenu.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        // Cierra el menú automáticamente si se hace clic en cualquier otra parte del sitio
+        document.addEventListener('click', function(event) {
+            if (horizontalMenu.classList.contains('open')) {
+                horizontalMenu.classList.remove('open');
+            }
+        });
+    }
+});
+
+// --- 5. Sistema de Carrusel Automatizado del Hero ---
+function initCarousel() {
+    // Captura de forma estricta todas las diapositivas presentes en el contenedor
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentSlide = 0;
+    const slideInterval = 5000; // Intervalo de transición exacta: 5 segundos
+
+    // Validación de seguridad: si no existen diapositivas, aborta para evitar bucles infinitos
+    if (slides.length === 0) {
+        console.warn("Jarvis Alerta: No se encontraron elementos '.carousel-slide' en el DOM.");
+        return;
+    }
+
+    // Registro en consola del total de fotos indexadas para doble verificación del desarrollador
+    console.log(`Jarvis Verificación: Carrusel inicializado con ${slides.length} fotografías.`);
+
+    function nextSlide() {
+        // 1. Remueve la clase activa de la diapositiva que está visible actualmente
+        slides[currentSlide].classList.remove('active');
+        
+        // 2. Cálculo matemático del índice de la siguiente imagen
+        // El operador residuo (%) garantiza que al llegar a la última foto (16), el índice regrese a 0
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // 3. Aplica la clase activa a la nueva diapositiva para iniciar la transición de opacidad (CSS)
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Configura el hilo de ejecución cíclico en el navegador
+    setInterval(nextSlide, slideInterval);
+}
+
+// Inserción segura en el ciclo de vida del documento
+document.addEventListener('DOMContentLoaded', function() {
+    // Encapsulamos en una función autoejecutable o directa para aislamiento de errores
+    try {
+        initCarousel();
+    } catch (error) {
+        console.error("Error crítico al inicializar el carrusel de imágenes:", error);
+    }
+
+
+    // 1. Gestión de pestañas internas del submenú
+    const tabTriggers = document.querySelectorAll('.portfolio-tab-trigger');
+    const galleryPanes = document.querySelectorAll('.dropdown-gallery-pane');
+
+    tabTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function (e) {
+            e.preventDefault(); // Previene la recarga o saltos abruptos de scroll
+            
+            const targetId = this.getAttribute('data-target');
+            const targetPane = document.getElementById(targetId);
+
+            if (targetPane && !targetPane.classList.contains('active')) {
+                // Desvanecer paneles activos anteriores
+                galleryPanes.forEach(pane => {
+                    pane.style.opacity = '0';
+                    setTimeout(() => {
+                        pane.classList.remove('active');
+                    }, 150);
+                });
+
+                // Mostrar el panel de la categoría seleccionada de forma orgánica
+                setTimeout(() => {
+                    targetPane.classList.add('active');
+                    void targetPane.offsetWidth; // Forzar reflow mecánico
+                    targetPane.style.opacity = '1';
+                }, 180);
+            }
+        });
+    });
+
+    // 2. Lógica del Visualizador Lightbox con Navegación Secuencial
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('modal-img-target');
+    const closeBtn = document.querySelector('.gallery-modal-close');
+    const prevBtn = document.getElementById('modal-prev');
+    const nextBtn = document.getElementById('modal-next');
+    
+    let currentImagesArray = []; // Almacena temporalmente las fotos de la galería abierta
+    let currentImgIndex = 0;     // Puntero del índice activo
+
+    // Escucha delegada para capturar clics en las imágenes de las galerías
+    document.querySelectorAll('.dropdown-gallery-container').forEach(container => {
+        container.addEventListener('click', function (e) {
+            const clickedImg = e.target.closest('.dropdown-gallery-item img');
+            if (!clickedImg) return;
+
+            // Encontrar el panel padre activo en el que se encuentra la imagen clicada
+            const activePane = clickedImg.closest('.dropdown-gallery-pane');
+            if (!activePane) return;
+
+            // Indexar todas las imágenes pertenecientes de forma exclusiva a esa categoría activa
+            currentImagesArray = Array.from(activePane.querySelectorAll('.dropdown-gallery-item img'));
+            currentImgIndex = currentImagesArray.indexOf(clickedImg);
+
+            updateModalContent();
+            modal.classList.add('show');
+        });
+    });
+
+    // Función encargada de actualizar dinámicamente el source y atributos del visualizador
+    function updateModalContent() {
+        if (currentImagesArray.length > 0 && currentImagesArray[currentImgIndex]) {
+            const targetData = currentImagesArray[currentImgIndex];
+            modalImg.style.opacity = '0';
+            
+            setTimeout(() => {
+                modalImg.src = targetData.src;
+                modalImg.alt = targetData.alt;
+                modalImg.style.opacity = '1';
+            }, 100);
+        }
+    }
+
+    // Funciones de control direccional
+    function navigateNext() {
+        if (currentImagesArray.length === 0) return;
+        currentImgIndex = (currentImgIndex + 1) % currentImagesArray.length;
+        updateModalContent();
+    }
+
+    function navigatePrev() {
+        if (currentImagesArray.length === 0) return;
+        currentImgIndex = (currentImgIndex - 1 + currentImagesArray.length) % currentImagesArray.length;
+        updateModalContent();
+    }
+
+    // Asignación de manejadores de eventos para la navegación
+    if (nextBtn) nextBtn.addEventListener('click', navigateNext);
+    if (prevBtn) prevBtn.addEventListener('click', navigatePrev);
+
+    // Cerrar la modal
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => modal.classList.remove('show'));
+    }
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('show');
+        });
+    }
+
+    // Soporte para navegación interactiva rápida por medio del teclado
+    document.addEventListener('keydown', function (e) {
+        if (!modal || !modal.classList.contains('show')) return;
+        if (e.key === 'ArrowRight') navigateNext();
+        if (e.key === 'ArrowLeft') navigatePrev();
+        if (e.key === 'Escape') modal.classList.remove('show');
+    });
+
+     // hamburguesa
+   
+
+});
+

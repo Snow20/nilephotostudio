@@ -1,30 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicole Fotografía | Portafolio</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INDHILET | Portafolio</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="script.js"></script>
 </head>
 
 <body>
-
-    <header class="hero">
+    <header class="hero fixed-top">
         <div class="carousel-container">
-        <div class="carousel-slide active" style="background-image: url('assets/images/banner.jpg');"></div>
-        <div class="carousel-slide" style="background-image: url('assets/images/camara.jpg');"></div>
-        <div class="carousel-slide" style="background-image: url('assets/images/paisaje.jpg');"></div>
-    </div>
+            <div class="carousel-slide active"
+                style="background-image: url('assets/images/paisajes/urbano/_MG_9396.jpg');">
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/images/paisajes/macro/_MG_8577.jpg');">
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/images/retratos/estudio/noct_2.JPG');">
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/images/paisajes/macro/DSC_9671.JPG');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/paisajes/naturaleza/_MG_8551.jpg');"></div>
+            <div class="carousel-slide" style="background-image: url('assets/images/paisajes/macro/RITMO1.JPG');"></div>
+            <div class="carousel-slide" style="background-image: url('assets/images/paisajes/macro/ritmos_1.JPG');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/proyectos/lamuertedetoyshow/2. Corre.jpg');"></div>
+            <div class="carousel-slide" style="background-image: url('assets/images/naturalezaMuerta/_MG_9669.jpg');">
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/images/naturalezaMuerta/zoom efx.JPG');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/naturalezaMuerta/flash veloc lentas_1.JPG');"></div>
+            <div class="carousel-slide" style="background-image: url('assets/images/naturalezaMuerta/9.jpg');"></div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/retratos/estudio/_MG_9530-1-1.jpg');"></div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/retratos/estudio/Distorsiones (3).jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/retratos/estudio/Distorsiones (5).jpg');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/retratos/estudio/encuadre compuesto 2.jpg');"></div>
+            <div class="carousel-slide"
+                style="background-image: url('assets/images/retratos/estudio/FiguraHumana_24.JPG');">
+            </div>
+        </div>
         <div class="hero-overlay"></div>
 
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="#inicio">INICIO</a></li>
                 <li><a href="#sobre-mi">SOBRE MÍ</a></li>
-                <li><a href="#portafolio">PORTAFOLIO</a></li>
+                <li><a href="#portafolio" id="nav-portfolio-trigger">PORTAFOLIO</a></li>
+
+                <div id="horizontal-dropdown-menu" class="horizontal-dropdown-menu">
+                    <nav class="dropdown-nav-content">
+                        <ul class="dropdown-main-links">
+                            <li class="has-submenu">
+                                <a href="#portafolio" data-key="menu_retratos">Retratos</a>
+                                <ul class="vertical-submenu">
+                                    <li><a href="#portafolio" data-key="sub_moda" class="portfolio-tab-trigger"
+                                            data-target="gallery-moda">Moda</a></li>
+                                    <li><a href="#portafolio" data-key="sub_estudio" class="portfolio-tab-trigger"
+                                            data-target="gallery-estudio">Estudio</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#portafolio" data-key="menu_paisajes">Paisajes</a>
+                                <ul class="vertical-submenu">
+                                    <li><a href="#portafolio" data-key="sub_urbano" class="portfolio-tab-trigger"
+                                            data-target="gallery-urbano">Urbano</a></li>
+                                    <li><a href="#portafolio" data-key="sub_naturaleza" class="portfolio-tab-trigger"
+                                            data-target="gallery-naturaleza">Naturaleza</a></li>
+                                    <li><a href="#portafolio" data-key="sub_macro" class="portfolio-tab-trigger"
+                                            data-target="gallery-macro">Macro</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#portafolio" data-key="menu_naturaleza">Naturaleza Muerta</a>
+                                <ul class="vertical-submenu">
+                                    <li><a href="#portafolio" data-key="sub_bn" class="portfolio-tab-trigger"
+                                            data-target="gallery-bn">Blanco y Negro</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#portafolio" data-key="menu_proyectos">Proyectos</a>
+                                <ul class="vertical-submenu">
+                                    <li><a href="#portafolio" data-key="sub_toyshow" class="portfolio-tab-trigger"
+                                            data-target="gallery-toyshow">La Muerte Toy Show</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown-gallery-container">
+                            <div class="dropdown-gallery-pane active" id="gallery-moda">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/retratos/estudio/_MG_9530-1-1.jpg" alt="Moda 1"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/retratos/estudio/noct_2.JPG" alt="Moda 2"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/retratos/estudio/encuadre compuesto 2.jpg" alt="Moda 3">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-gallery-pane" id="gallery-estudio">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/retratos/estudio/Distorsiones (3).jpg" alt="Estudio 1">
+                                    </div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/retratos/estudio/Distorsiones (5).jpg" alt="Estudio 2">
+                                    </div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/retratos/estudio/FiguraHumana_24.JPG" alt="Estudio 3">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-gallery-pane" id="gallery-urbano">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/paisajes/urbano/_MG_9396.jpg" alt="Urbano 1"></div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-gallery-pane" id="gallery-naturaleza">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/paisajes/naturaleza/_MG_8551.jpg" alt="Naturaleza 1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-gallery-pane" id="gallery-macro">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/paisajes/macro/_MG_8577.jpg" alt="Macro 1"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/paisajes/macro/DSC_9671.JPG" alt="Macro 2"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/paisajes/macro/RITMO1.JPG" alt="Macro 3"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/paisajes/macro/ritmos_1.JPG" alt="Macro 4"></div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-gallery-pane" id="gallery-bn">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/naturalezaMuerta/_MG_9669.jpg" alt="Objeto 1"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/naturalezaMuerta/zoom efx.JPG" alt="Objeto 2"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/naturalezaMuerta/flash veloc lentas_1.JPG"
+                                            alt="Objeto 3"></div>
+                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/9.jpg"
+                                            alt="Objeto 4"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/naturalezaMuerta/flash veloc lentas.jpg" alt="Objeto 5">
+                                    </div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/naturalezaMuerta/trepidaci_1.jpg" alt="Objeto 6"></div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-gallery-pane" id="gallery-toyshow">
+                                <div class="dropdown-gallery-grid">
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/proyectos/lamuertedetoyshow/2. Corre.jpg"
+                                            alt="Proyecto 1"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/proyectos/lamuertedetoyshow/3. Soltar.jpg"
+                                            alt="Proyecto 2"></div>
+                                    <div class="dropdown-gallery-item"><img
+                                            src="assets/images/proyectos/lamuertedetoyshow/4. Santa Muerte.jpg"
+                                            alt="Proyecto 3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
                 <li><a href="#contacto">CONTACTO</a></li>
             </ul>
             <div class="language-selector">
@@ -36,101 +202,71 @@
 
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="first-name">NICOLE</span>
-                <span class="last-name">FOTOGRAFÍA</span>
+                <span class="first-name">INDHILET</span>
+                <span class="last-name">LEONES</span>
             </h1>
         </div>
     </header>
 
     <main class="container">
-
         <section id="sobre-mi" class="about-section">
             <div class="about-grid">
                 <div class="about-image-container">
-                    <img src="assets/images/nico.jpg" alt="Retrato de Nicole Leones" class="profile-pic">
+                    <img src="assets/images/naturalezaMuerta/flash veloc lentas.JPG" alt="Retrato de Nicole Leones"
+                        class="profile-pic" />
                 </div>
 
                 <div class="about-text">
                     <h2 data-key="about_title">Soy Nicole Leones...</h2>
-                    <p data-key="about_text">Soy Nicole Indhilet Leones
-                        Gómez, fotógrafa en formación que está cursando segundo año
-                        del Ciclo Superior de Fotografía en la Escuela de Arte Superior y
-                        Diseño Pablo Picasso en A Coruña.</p>
-                    <p data-key="about_text2">En este espacio, comparto una selección de mis trabajos más significativos, donde la luz, la
-                        composición y la emoción se entrelazan para dar vida a momentos inolvidables.</p>
+                    <p data-key="about_text">
+                        Soy Nicole Indhilet Leones Gómez, fotógrafa en formación que está
+                        cursando segundo año del Ciclo Superior de Fotografía en la
+                        Escuela de Arte Superior y Diseño Pablo Picasso en A Coruña.
+                    </p>
+                    <p data-key="about_text2">
+                        En este espacio, comparto una selección de mis trabajos más
+                        significativos, donde la luz, la composición y la emoción se
+                        entrelazan para dar vida a momentos inolvidables.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="portafolio" class="portfolio-section">
-            <h2 class="section-title" data-key="portfolio_title">TRABAJOS REALIZADOS</h2>
 
-            <div class="portfolio-grid">
-
-                <div class="portfolio-item">
-                    <img src="assets/images/personas.jpg" alt="Fotografía de Personas">
-                    <div class="portfolio-caption red">
-                        <h3>Fotografía de Personas</h3>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="assets/images/urbano.jpg" alt="Paisajes Urbanos">
-                    <div class="portfolio-caption red">
-                        <h3>Paisajes Urbanos</h3>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="assets/images/paisaje.jpg" alt="Paisajes de Naturaleza">
-                    <div class="portfolio-caption red">
-                        <h3>Paisajes de Naturaleza</h3>
-                    </div>
-                </div>
-
-                <div class="portfolio-item minimalist">
-                    <img src="assets/images/minimalista2.jpg" alt="Retratos Minimalistas">
-                    <div class="portfolio-caption dark">
-                        <h3>Retratos Minimalistas</h3>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 
         <section id="contacto" class="contact-section">
             <div class="contact-grid">
-
                 <div class="contact-form-container">
                     <form id="contactForm" action="#" method="post">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Nombre" required>
+                            <input type="text" id="name" name="name" placeholder="Nombre" required />
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Email" required>
+                            <input type="email" id="email" name="email" placeholder="Email" required />
                         </div>
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Mensaje" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit" data-key="contact_btn">Enviar</button>
+                        <button type="submit" class="btn-submit" data-key="contact_btn">
+                            Enviar
+                        </button>
                     </form>
                 </div>
 
                 <div class="social-links-container">
                     <div class="social-icons">
-                        <a href="#" class="social-icon" target="_blank" aria-label="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" target="_blank" aria-label="Gmail"><i
+                                class="fab fa-google"></i></a>
                         <a href="https://www.instagram.com/nile.photo.studio" class="social-icon" target="_blank"
                             aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon" target="_blank" aria-label="Twitter"><i
                                 class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon" target="_blank" aria-label="Flickr"><i
-                                class="fab fa-flickr"></i></a>
+                        <a href="#" class="social-icon" target="_blank" aria-label="Tik Tok"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
@@ -138,15 +274,27 @@
     </footer>
 
     <div class="floating-buttons">
-    <a href="https://wa.me/+34633191597" class="float-btn whatsapp" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        <a href="https://wa.me/+34613344886" class="float-btn whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
 
-    <button id="backToTop" class="float-btn back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-</div>
+        <button id="backToTop" class="float-btn back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
 
+    <div id="gallery-modal" class="gallery-modal">
+        <span class="gallery-modal-close">&times;</span>
+        <button class="modal-nav-btn prev-btn" id="modal-prev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="modal-image-wrapper">
+            <img class="gallery-modal-content" id="modal-img-target" src="" alt="Visualización">
+        </div>
+        <button class="modal-nav-btn next-btn" id="modal-next" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
 </body>
 
 </html>
