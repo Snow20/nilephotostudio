@@ -3,20 +3,28 @@
    ========================================= */
 :root {
     /* Fondos */
-    --color-bg-main: #0a0a0a;       /* Negro muy oscuro (fondo principal) */
-    --color-bg-darker: #050505;     /* Negro casi absoluto (footer, navbar en móvil) */
-    
+    --color-bg-main: #0a0a0a;
+    /* Negro muy oscuro (fondo principal) */
+    --color-bg-darker: #050505;
+    /* Negro casi absoluto (footer, navbar en móvil) */
+
     /* Acentos */
-    --color-accent-red: #da251d;     /* Rojo vibrante (botones, iconos, overlays) */
-    --color-accent-red-hover: #b51e18; /* Rojo más oscuro para efectos hover */
-    
+    --color-accent-red: #da251d;
+    /* Rojo vibrante (botones, iconos, overlays) */
+    --color-accent-red-hover: #b51e18;
+    /* Rojo más oscuro para efectos hover */
+
     /* Texto */
-    --color-text-main: #e0e0e0;     /* Gris muy claro (texto principal) */
-    --color-text-light: #ffffff;     /* Blanco (títulos, navbar) */
-    --color-text-muted: #888888;     /* Gris medio (texto secundario) */
-    
+    --color-text-main: #e0e0e0;
+    /* Gris muy claro (texto principal) */
+    --color-text-light: #ffffff;
+    /* Blanco (títulos, navbar) */
+    --color-text-muted: #888888;
+    /* Gris medio (texto secundario) */
+
     /* Bordes y Líneas */
-    --color-border: #333333;        /* Gris oscuro para líneas divisorias */
+    --color-border: #333333;
+    /* Gris oscuro para líneas divisorias */
 }
 
 /* =========================================
@@ -31,7 +39,8 @@
 html {
     /* Suaviza el desplazamiento al usar enlaces de anclaje (#id) */
     scroll-behavior: smooth;
-    font-size: 16px; /* Tamaño de fuente base */
+    font-size: 16px;
+    /* Tamaño de fuente base */
 }
 
 body {
@@ -39,7 +48,8 @@ body {
     background-color: var(--color-bg-main);
     color: var(--color-text-main);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    overflow-x: hidden;
+    /* Evita el desplazamiento horizontal */
 }
 
 a {
@@ -52,7 +62,9 @@ ul {
     list-style: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 700;
     color: var(--color-text-light);
     letter-spacing: 1px;
@@ -79,7 +91,8 @@ h1, h2, h3 {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    height: 100vh;
+    /* Ocupa todo el alto de la pantalla */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +101,8 @@ h1, h2, h3 {
     background-image: url('images/hero-mosaic.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto paralaje opcional */
+    background-attachment: fixed;
+    /* Efecto paralaje opcional */
 }
 
 /* Capa oscura superpuesta para asegurar legibilidad del título */
@@ -98,7 +112,8 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Negro con transparencia */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Negro con transparencia */
     z-index: 1;
 }
 
@@ -111,22 +126,26 @@ h1, h2, h3 {
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    z-index: 10; /* Asegura que esté por encima del overlay */
+    z-index: 10;
+    /* Asegura que esté por encima del overlay */
 }
 
 .nav-links {
     display: flex;
-    gap: 40px; /* Espaciado entre enlaces */
+    gap: 40px;
+    /* Espaciado entre enlaces */
 }
 
 .nav-links a {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7); /* Blanco tenue por defecto */
+    color: rgba(255, 255, 255, 0.7);
+    /* Blanco tenue por defecto */
     letter-spacing: 2px;
 }
 
 .nav-links a:hover {
-    color: var(--color-text-light); /* Blanco brillante al pasar el ratón */
+    color: var(--color-text-light);
+    /* Blanco brillante al pasar el ratón */
 }
 
 /* Título Central del Hero */
@@ -139,7 +158,8 @@ h1, h2, h3 {
 .hero-title {
     display: flex;
     flex-direction: column;
-    border: 3px solid var(--color-text-light); /* Recuadro blanco */
+    border: 3px solid var(--color-text-light);
+    /* Recuadro blanco */
     padding: 20px 60px;
 }
 
@@ -151,9 +171,11 @@ h1, h2, h3 {
 .hero-title .last-name {
     font-size: 1.5rem;
     font-weight: 300;
-    letter-spacing: 8px; /* Espaciado amplio entre letras */
+    letter-spacing: 8px;
+    /* Espaciado amplio entre letras */
     color: var(--color-text-main);
-    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Línea divisoria fina */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    /* Línea divisoria fina */
     padding-top: 10px;
     margin-top: 5px;
 }
@@ -167,7 +189,8 @@ h1, h2, h3 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Imagen más estrecha que el texto */
+    grid-template-columns: 1fr 1.5fr;
+    /* Imagen más estrecha que el texto */
     gap: 50px;
     align-items: center;
 }
@@ -181,8 +204,9 @@ h1, h2, h3 {
     max-width: 350px;
     height: auto;
     /* Efecto Blanco y Negro (requiere que la imagen sea en color) */
-    filter: grayscale(100%); 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    filter: grayscale(100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Sombra suave */
 }
 
 .about-text h2 {
@@ -206,21 +230,26 @@ h1, h2, h3 {
 .portfolio-grid {
     display: grid;
     /* 4 columnas automáticas, se adaptan en móvil */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 15px; /* Espaciado muy pequeño entre fotos */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    /* Espaciado muy pequeño entre fotos */
 }
 
 .portfolio-item {
     position: relative;
-    overflow: hidden; /* Evita que la imagen sobresalga en zoom */
-    aspect-ratio: 1 / 1; /* Mantiene el elemento cuadrado */
+    overflow: hidden;
+    /* Evita que la imagen sobresalga en zoom */
+    aspect-ratio: 1 / 1;
+    /* Mantiene el elemento cuadrado */
 }
 
 .portfolio-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-    filter: grayscale(100%); /* B&N por defecto */
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+    filter: grayscale(100%);
+    /* B&N por defecto */
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
@@ -232,7 +261,8 @@ h1, h2, h3 {
     width: 100%;
     padding: 15px;
     text-align: center;
-    transform: translateY(100%); /* Oculto por defecto debajo */
+    transform: translateY(100%);
+    /* Oculto por defecto debajo */
     transition: transform 0.4s ease;
     z-index: 2;
 }
@@ -249,7 +279,8 @@ h1, h2, h3 {
 }
 
 .portfolio-caption.dark {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro translúcido */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo negro translúcido */
 }
 
 /* Variación Minimalista: B&N siempre, caption oscuro */
@@ -259,12 +290,15 @@ h1, h2, h3 {
 
 /* --- Efectos Hover --- */
 .portfolio-item:hover img {
-    transform: scale(1.1); /* Zoom suave al pasar ratón */
-    filter: grayscale(0%);   /* La imagen cobra color */
+    transform: scale(1.1);
+    /* Zoom suave al pasar ratón */
+    filter: grayscale(0%);
+    /* La imagen cobra color */
 }
 
 .portfolio-item:hover .portfolio-caption {
-    transform: translateY(0%); /* Muestra el pie al pasar ratón */
+    transform: translateY(0%);
+    /* Muestra el pie al pasar ratón */
 }
 
 /* =========================================
@@ -272,12 +306,14 @@ h1, h2, h3 {
    ========================================= */
 .contact-section {
     padding: 100px 0;
-    border-top: 1px solid var(--color-border); /* Línea divisoria */
+    border-top: 1px solid var(--color-border);
+    /* Línea divisoria */
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Formulario más ancho que iconos */
+    grid-template-columns: 2fr 1fr;
+    /* Formulario más ancho que iconos */
     gap: 50px;
     align-items: center;
 }
@@ -292,7 +328,8 @@ input[type="email"],
 textarea {
     width: 100%;
     padding: 15px;
-    background-color: #1a1a1a; /* Gris muy oscuro para inputs */
+    background-color: #1a1a1a;
+    /* Gris muy oscuro para inputs */
     border: 1px solid #333;
     color: var(--color-text-main);
     font-size: 1rem;
@@ -302,11 +339,13 @@ textarea {
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--color-accent-red); /* Borde rojo al enfocar */
+    border-color: var(--color-accent-red);
+    /* Borde rojo al enfocar */
 }
 
 textarea {
-    resize: vertical; /* Permite cambiar tamaño verticalmente */
+    resize: vertical;
+    /* Permite cambiar tamaño verticalmente */
 }
 
 .btn-submit {
@@ -323,14 +362,17 @@ textarea {
 }
 
 .btn-submit:hover {
-    background-color: var(--color-accent-red-hover); /* Rojo más oscuro al hover */
+    background-color: var(--color-accent-red-hover);
+    /* Rojo más oscuro al hover */
 }
 
 /* Iconos Sociales */
 .social-icons {
     display: flex;
-    justify-content: space-around; /* Distribución uniforme */
-    flex-wrap: wrap; /* Permite salto de línea en móvil */
+    justify-content: space-around;
+    /* Distribución uniforme */
+    flex-wrap: wrap;
+    /* Permite salto de línea en móvil */
     gap: 20px;
 }
 
@@ -340,15 +382,18 @@ textarea {
     align-items: center;
     width: 60px;
     height: 60px;
-    background-color: var(--color-accent-red); /* Círculo rojo */
+    background-color: var(--color-accent-red);
+    /* Círculo rojo */
     color: var(--color-text-light);
-    border-radius: 50%; /* Forma circular */
+    border-radius: 50%;
+    /* Forma circular */
     font-size: 1.5rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.1) rotate(5deg); /* Efecto pop y rotación */
+    transform: scale(1.1) rotate(5deg);
+    /* Efecto pop y rotación */
     background-color: var(--color-accent-red-hover);
 }
 
@@ -370,14 +415,18 @@ textarea {
 
 /* Tablets y pantallas medianas (menos de 992px) */
 @media (max-width: 992px) {
-    .about-grid, .contact-grid {
-        grid-template-columns: 1fr; /* Pasa a una sola columna */
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* Pasa a una sola columna */
         gap: 40px;
         text-align: center;
     }
 
     .about-image-container {
-        order: -1; /* Mueve la imagen arriba del texto en móvil */
+        order: -1;
+        /* Mueve la imagen arriba del texto en móvil */
     }
 
     .hero-title .first-name {
@@ -388,7 +437,8 @@ textarea {
 /* Móviles (menos de 600px) */
 @media (max-width: 600px) {
     html {
-        font-size: 14px; /* Pequeña reducción de fuente base */
+        font-size: 14px;
+        /* Pequeña reducción de fuente base */
     }
 
     .navbar {
@@ -396,7 +446,8 @@ textarea {
     }
 
     .nav-links {
-        gap: 15px; /* Menor espacio entre enlaces */
+        gap: 15px;
+        /* Menor espacio entre enlaces */
     }
 
     .hero-title {
@@ -408,7 +459,8 @@ textarea {
     }
 
     .portfolio-grid {
-        grid-template-columns: 1fr; /* Una foto por fila en móvil */
+        grid-template-columns: 1fr;
+        /* Una foto por fila en móvil */
     }
 }
 
@@ -440,14 +492,15 @@ textarea {
 
 /* =========================================
    /* Configuración del contenedor del carrusel */
-  /* ========================================= */
+/* ========================================= */
 .carousel-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Por detrás del texto y el overlay */
+    z-index: 0;
+    /* Por detrás del texto y el overlay */
 }
 
 .carousel-slide {
@@ -458,8 +511,10 @@ textarea {
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0; /* Oculta por defecto */
-    transition: opacity 0.3s ease-in-out; /* Transición de desvanecimiento */
+    opacity: 0;
+    /* Oculta por defecto */
+    transition: opacity 0.3s ease-in-out;
+    /* Transición de desvanecimiento */
     z-index: 1;
 }
 
@@ -473,7 +528,8 @@ textarea {
 .hero {
     position: relative;
     overflow: hidden;
-    background-image: none !important; /* Eliminamos el fondo estático anterior */
+    background-image: none !important;
+    /* Eliminamos el fondo estático anterior */
 }
 
 /* Estilo general de los botones flotantes */
@@ -485,7 +541,8 @@ textarea {
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacio entre los dos botones */
+    gap: 15px;
+    /* Espacio entre los dos botones */
     z-index: 1000;
 }
 
@@ -493,7 +550,8 @@ textarea {
 .float-btn {
     width: 50px;
     height: 50px;
-    border-radius: 12px; /* Forma cuadrada redondeada como en tu imagen */
+    border-radius: 12px;
+    /* Forma cuadrada redondeada como en tu imagen */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -501,7 +559,7 @@ textarea {
     font-size: 24px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, opacity 0.3s;
     text-decoration: none;
 }
@@ -516,7 +574,8 @@ textarea {
 /* Botón Volver Arriba (Azul) */
 .back-to-top {
     background-color: #b51e18;
-    opacity: 0; /* Oculto por defecto */
+    opacity: 0;
+    /* Oculto por defecto */
     visibility: hidden;
 }
 
@@ -530,6 +589,10 @@ textarea {
     transform: scale(1.1);
 }
 
+.nav-item {
+    z-index: 2;
+}
+
 /* =========================================
 Drowndownmenu
 ========================================= */
@@ -541,17 +604,22 @@ Drowndownmenu
 /* Panel contenedor horizontal principal */
 .horizontal-dropdown-menu {
     position: absolute;
-    top: 80px;                  /* Ajustar a la altura exacta de tu navbar */
+    top: 0px;
+    /* Ajustar a la altura exacta de tu navbar */
     left: 0;
     width: 100%;
-    background-color: #050505;  /* Color de fondo --color-bg-darker */
-    border-bottom: 2px solid var(--color-accent-red); /* Línea inferior roja */
-    z-index: 99;
-    opacity: 0;                 /* Oculto por defecto */
+    background-color: #050505;
+    /* Color de fondo --color-bg-darker */
+    border-bottom: 2px solid var(--color-accent-red);
+    /* Línea inferior roja */
+    z-index: 1;
+    opacity: 0;
+    /* Oculto por defecto */
     visibility: hidden;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    padding: 20px 0;
+    padding: 100px 20px 20px;
+    height: 100vh;
 }
 
 /* Estado activo del panel principal (controlado por JS) */
@@ -571,20 +639,23 @@ Drowndownmenu
 .dropdown-main-links {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start; /* Alinea los bloques al inicio de la barra */
-    gap: 60px;                  /* Separación amplia entre categorías principales */
+    justify-content: flex-start;
+    /* Alinea los bloques al inicio de la barra */
+    gap: 60px;
+    /* Separación amplia entre categorías principales */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 /* Contenedor de cada categoría principal */
-.dropdown-main-links > li {
-    position: relative;         /* Necesario para posicionar el submenú de forma absoluta respecto a este elemento */
+.dropdown-main-links>li {
+    position: relative;
+    /* Necesario para posicionar el submenú de forma absoluta respecto a este elemento */
 }
 
 /* Enlaces principales (Retratos, Paisajes, etc.) */
-.dropdown-main-links > li > a {
+.dropdown-main-links>li>a {
     display: block;
     font-size: 1.1rem;
     color: var(--color-text-light);
@@ -596,7 +667,7 @@ Drowndownmenu
     transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
-.dropdown-main-links > li > a:hover {
+.dropdown-main-links>li>a:hover {
     color: var(--color-accent-red);
     border-bottom-color: var(--color-accent-red);
 }
@@ -604,11 +675,15 @@ Drowndownmenu
 /* Submenús Verticales (Ocultos por defecto) */
 .vertical-submenu {
     position: absolute;
-    top: 100%;                  /* Se posiciona inmediatamente debajo del enlace padre */
+    top: 100%;
+    /* Se posiciona inmediatamente debajo del enlace padre */
     left: 0;
-    min-width: 180px;           /* Ancho mínimo para que los textos no se corten */
-    background-color: #0a0a0a;  /* Fondo --color-bg-main */
-    border-left: 2px solid var(--color-accent-red); /* Detalle de línea roja a la izquierda */
+    min-width: 180px;
+    /* Ancho mínimo para que los textos no se corten */
+    background-color: #0a0a0a;
+    /* Fondo --color-bg-main */
+    border-left: 2px solid var(--color-accent-red);
+    /* Detalle de línea roja a la izquierda */
     list-style: none;
     padding: 10px 0;
     margin: 0;
@@ -633,12 +708,14 @@ Drowndownmenu
 /* Hover de los elementos del submenú */
 .vertical-submenu a:hover {
     color: var(--color-text-light);
-    background-color: #141414;  /* Feedback visual sutil de fondo */
-    padding-left: 20px;         /* Desplazamiento interactivo */
+    background-color: #141414;
+    /* Feedback visual sutil de fondo */
+    padding-left: 20px;
+    /* Desplazamiento interactivo */
 }
 
 /* ACTIVACIÓN POR HOVER: Muestra el submenú vertical cuando el cursor está sobre el li padre */
-.dropdown-main-links > li:hover .vertical-submenu {
+.dropdown-main-links>li:hover .vertical-submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -809,13 +886,19 @@ Drowndownmenu
     transform: translateY(-50%) scale(1.05);
 }
 
-.prev-btn { left: 5%; }
-.next-btn { right: 5%; }
+.prev-btn {
+    left: 5%;
+}
+
+.next-btn {
+    right: 5%;
+}
 
 /* Scrollbar estilizada para el panel de fotos */
 .dropdown-gallery-container::-webkit-scrollbar {
     width: 4px;
 }
+
 .dropdown-gallery-container::-webkit-scrollbar-thumb {
     background: var(--color-accent-red);
     border-radius: 2px;
@@ -828,6 +911,7 @@ Drowndownmenu
 
 /* --- 1. TABLETS Y PANTALLAS MEDIANAS (Hasta 992px) --- */
 @media screen and (max-width: 992px) {
+
     /* Ajuste del contenedor interno del menú para apilarse verticalmente */
     .dropdown-nav-content {
         flex-direction: column;
@@ -843,7 +927,7 @@ Drowndownmenu
     /* Permitir que el área de fotos use todo el ancho y limitar su altura */
     .dropdown-gallery-container {
         width: 100%;
-        max-height: 50vh; 
+        max-height: 50vh;
     }
 
     /* Reducción de la cuadrícula a 2 columnas para equilibrar el espacio en tablets */
@@ -858,12 +942,19 @@ Drowndownmenu
         height: 50px;
         font-size: 20px;
     }
-    .prev-btn { left: 2%; }
-    .next-btn { right: 2%; }
+
+    .prev-btn {
+        left: 2%;
+    }
+
+    .next-btn {
+        right: 2%;
+    }
 }
 
 /* --- 2. SMARTPHONES Y PANTALLAS PEQUEÑAS (Hasta 576px) --- */
 @media screen and (max-width: 576px) {
+
     /* Reajuste del submenú desplegable horizontal principal para permitir scroll móvil si es necesario */
     .horizontal-dropdown-menu {
         padding: 15px;
@@ -880,7 +971,8 @@ Drowndownmenu
         min-width: 100%;
         background-color: rgba(20, 20, 20, 0.5);
         box-shadow: none;
-        padding: 5px 0 5px 15px; /* Indentación para denotar jerarquía */
+        padding: 5px 0 5px 15px;
+        /* Indentación para denotar jerarquía */
         margin-top: 5px;
         border-left: 2px solid var(--color-accent-red);
         opacity: 1;
@@ -911,7 +1003,8 @@ Drowndownmenu
         transform: none;
         width: 55px;
         height: 55px;
-        border-radius: 8px; /* Diseño más accesible para pulgares */
+        border-radius: 8px;
+        /* Diseño más accesible para pulgares */
         background: rgba(15, 15, 15, 0.85);
     }
 
@@ -935,4 +1028,3 @@ Drowndownmenu
         padding: 10px;
     }
 }
-

@@ -5,9 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>INDHILET | Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="estilos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -52,147 +58,158 @@
         </div>
         <div class="hero-overlay"></div>
 
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#sobre-mi">SOBRE MÍ</a></li>
-                <li><a href="#portafolio" id="nav-portfolio-trigger">PORTAFOLIO</a></li>
-
-                <div id="horizontal-dropdown-menu" class="horizontal-dropdown-menu">
-                    <nav class="dropdown-nav-content">
-                        <ul class="dropdown-main-links">
-                            <li class="has-submenu">
-                                <a href="#portafolio" data-key="menu_retratos">Retratos</a>
-                                <ul class="vertical-submenu">
-                                    <li><a href="#portafolio" data-key="sub_moda" class="portfolio-tab-trigger"
-                                            data-target="gallery-moda">Moda</a></li>
-                                    <li><a href="#portafolio" data-key="sub_estudio" class="portfolio-tab-trigger"
-                                            data-target="gallery-estudio">Estudio</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#portafolio" data-key="menu_paisajes">Paisajes</a>
-                                <ul class="vertical-submenu">
-                                    <li><a href="#portafolio" data-key="sub_urbano" class="portfolio-tab-trigger"
-                                            data-target="gallery-urbano">Urbano</a></li>
-                                    <li><a href="#portafolio" data-key="sub_naturaleza" class="portfolio-tab-trigger"
-                                            data-target="gallery-naturaleza">Naturaleza</a></li>
-                                    <li><a href="#portafolio" data-key="sub_macro" class="portfolio-tab-trigger"
-                                            data-target="gallery-macro">Macro</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#portafolio" data-key="menu_naturaleza">Naturaleza Muerta</a>
-                                <ul class="vertical-submenu">
-                                    <li><a href="#portafolio" data-key="sub_bn" class="portfolio-tab-trigger"
-                                            data-target="gallery-bn">Blanco y Negro</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#portafolio" data-key="menu_proyectos">Proyectos</a>
-                                <ul class="vertical-submenu">
-                                    <li><a href="#portafolio" data-key="sub_toyshow" class="portfolio-tab-trigger"
-                                            data-target="gallery-toyshow">La Muerte Toy Show</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <div class="dropdown-gallery-container">
-                            <div class="dropdown-gallery-pane active" id="gallery-moda">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/retratos/estudio/_MG_9530-1-1.jpg" alt="Moda 1"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/retratos/estudio/noct_2.JPG" alt="Moda 2"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/retratos/estudio/encuadre compuesto 2.jpg" alt="Moda 3">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown-gallery-pane" id="gallery-estudio">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/retratos/estudio/Distorsiones (3).jpg" alt="Estudio 1">
-                                    </div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/retratos/estudio/Distorsiones (5).jpg" alt="Estudio 2">
-                                    </div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/retratos/estudio/FiguraHumana_24.JPG" alt="Estudio 3">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown-gallery-pane" id="gallery-urbano">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/paisajes/urbano/_MG_9396.jpg" alt="Urbano 1"></div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown-gallery-pane" id="gallery-naturaleza">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/paisajes/naturaleza/_MG_8551.jpg" alt="Naturaleza 1">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown-gallery-pane" id="gallery-macro">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/paisajes/macro/_MG_8577.jpg" alt="Macro 1"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/paisajes/macro/DSC_9671.JPG" alt="Macro 2"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/paisajes/macro/RITMO1.JPG" alt="Macro 3"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/paisajes/macro/ritmos_1.JPG" alt="Macro 4"></div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown-gallery-pane" id="gallery-bn">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/naturalezaMuerta/_MG_9669.jpg" alt="Objeto 1"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/naturalezaMuerta/zoom efx.JPG" alt="Objeto 2"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/naturalezaMuerta/flash veloc lentas_1.JPG"
-                                            alt="Objeto 3"></div>
-                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/9.jpg"
-                                            alt="Objeto 4"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/naturalezaMuerta/flash veloc lentas.jpg" alt="Objeto 5">
-                                    </div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/naturalezaMuerta/trepidaci_1.jpg" alt="Objeto 6"></div>
-                                </div>
-                            </div>
-
-                            <div class="dropdown-gallery-pane" id="gallery-toyshow">
-                                <div class="dropdown-gallery-grid">
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/proyectos/lamuertedetoyshow/2. Corre.jpg"
-                                            alt="Proyecto 1"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/proyectos/lamuertedetoyshow/3. Soltar.jpg"
-                                            alt="Proyecto 2"></div>
-                                    <div class="dropdown-gallery-item"><img
-                                            src="assets/images/proyectos/lamuertedetoyshow/4. Santa Muerte.jpg"
-                                            alt="Proyecto 3"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Logitpo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav nav-links">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre-mi">SOBRE MÍ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portafolio"
+                                id="nav-portfolio-trigger">PORTAFOLIO</a><div id="horizontal-dropdown-menu" class="horizontal-dropdown-menu">
+                                    <nav class="dropdown-nav-content">
+                                        <ul class="dropdown-main-links">
+                                            <li class="has-submenu">
+                                                <a href="#portafolio" data-key="menu_retratos">Retratos</a>
+                                                <ul class="vertical-submenu">
+                                                    <li><a href="#portafolio" data-key="sub_moda" class="portfolio-tab-trigger"
+                                                            data-target="gallery-moda">Moda</a></li>
+                                                    <li><a href="#portafolio" data-key="sub_estudio" class="portfolio-tab-trigger"
+                                                            data-target="gallery-estudio">Estudio</a></li>
+                                                </ul>
+                                            </li>
+                                
+                                            <li class="has-submenu">
+                                                <a href="#portafolio" data-key="menu_paisajes">Paisajes</a>
+                                                <ul class="vertical-submenu">
+                                                    <li><a href="#portafolio" data-key="sub_urbano" class="portfolio-tab-trigger"
+                                                            data-target="gallery-urbano">Urbano</a></li>
+                                                    <li><a href="#portafolio" data-key="sub_naturaleza" class="portfolio-tab-trigger"
+                                                            data-target="gallery-naturaleza">Naturaleza</a></li>
+                                                    <li><a href="#portafolio" data-key="sub_macro" class="portfolio-tab-trigger"
+                                                            data-target="gallery-macro">Macro</a></li>
+                                                </ul>
+                                            </li>
+                                
+                                            <li class="has-submenu">
+                                                <a href="#portafolio" data-key="menu_naturaleza">Naturaleza Muerta</a>
+                                                <ul class="vertical-submenu">
+                                                    <li><a href="#portafolio" data-key="sub_bn" class="portfolio-tab-trigger"
+                                                            data-target="gallery-bn">Blanco y Negro</a></li>
+                                                </ul>
+                                            </li>
+                                
+                                            <li class="has-submenu">
+                                                <a href="#portafolio" data-key="menu_proyectos">Proyectos</a>
+                                                <ul class="vertical-submenu">
+                                                    <li><a href="#portafolio" data-key="sub_toyshow" class="portfolio-tab-trigger"
+                                                            data-target="gallery-toyshow">La
+                                                            Muerte Toy Show</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                
+                                        <div class="dropdown-gallery-container">
+                                            <div class="dropdown-gallery-pane active" id="gallery-moda">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/retratos/estudio/_MG_9530-1-1.jpg"
+                                                            alt="Moda 1">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/retratos/estudio/noct_2.JPG"
+                                                            alt="Moda 2"></div>
+                                                    <div class="dropdown-gallery-item"><img
+                                                            src="assets/images/retratos/estudio/encuadre compuesto 2.jpg" alt="Moda 3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="dropdown-gallery-pane" id="gallery-estudio">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/retratos/estudio/Distorsiones (3).jpg"
+                                                            alt="Estudio 1">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/retratos/estudio/Distorsiones (5).jpg"
+                                                            alt="Estudio 2">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/retratos/estudio/FiguraHumana_24.JPG"
+                                                            alt="Estudio 3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="dropdown-gallery-pane" id="gallery-urbano">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/paisajes/urbano/_MG_9396.jpg"
+                                                            alt="Urbano 1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="dropdown-gallery-pane" id="gallery-naturaleza">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/paisajes/naturaleza/_MG_8551.jpg"
+                                                            alt="Naturaleza 1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="dropdown-gallery-pane" id="gallery-macro">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/paisajes/macro/_MG_8577.jpg"
+                                                            alt="Macro 1"></div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/paisajes/macro/DSC_9671.JPG"
+                                                            alt="Macro 2"></div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/paisajes/macro/RITMO1.JPG" alt="Macro 3">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/paisajes/macro/ritmos_1.JPG"
+                                                            alt="Macro 4"></div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="dropdown-gallery-pane" id="gallery-bn">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/_MG_9669.jpg"
+                                                            alt="Objeto 1">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/zoom efx.JPG"
+                                                            alt="Objeto 2">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img
+                                                            src="assets/images/naturalezaMuerta/flash veloc lentas_1.JPG" alt="Objeto 3"></div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/9.jpg" alt="Objeto 4">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/flash veloc lentas.jpg"
+                                                            alt="Objeto 5">
+                                                    </div>
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/naturalezaMuerta/trepidaci_1.jpg"
+                                                            alt="Objeto 6">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="dropdown-gallery-pane" id="gallery-toyshow">
+                                                <div class="dropdown-gallery-grid">
+                                                    <div class="dropdown-gallery-item"><img src="assets/images/proyectos/lamuertedetoyshow/2. Corre.jpg"
+                                                            alt="Proyecto 1"></div>
+                                                    <div class="dropdown-gallery-item"><img
+                                                            src="assets/images/proyectos/lamuertedetoyshow/3. Soltar.jpg" alt="Proyecto 2"></div>
+                                                    <div class="dropdown-gallery-item"><img
+                                                            src="assets/images/proyectos/lamuertedetoyshow/4. Santa Muerte.jpg" alt="Proyecto 3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
+                    </ul>
+                    
                 </div>
-
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>
+            </div>
             <div class="language-selector">
                 <button onclick="changeLanguage('es')">ES</button>
                 <button onclick="changeLanguage('gl')">GAL</button>
