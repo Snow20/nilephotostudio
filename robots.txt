@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://ecstatic-curie.87-106-228-101.plesk.page/nile/sitemap.xml

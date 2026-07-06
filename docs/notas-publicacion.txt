@@ -1,0 +1,9 @@
+
+
+docs:
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+https://v17.angular.io/docs
+https://react.dev/
+https://developer.mozilla.org/en-US/
+https://www.w3schools.com/
+https://262.ecma-international.org/
